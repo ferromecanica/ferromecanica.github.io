@@ -90,6 +90,11 @@
             filter: invert(1);
             cursor: pointer;
         }
+
+        /* Ajuste de scroll para compensar el header de 32 (8rem) */
+        .scroll-mt-nav {
+            scroll-margin-top: 8rem;
+        }
     </style>
 </head>
 <body class="bg-[#0a0a0a] text-slate-100 leading-normal">
@@ -137,11 +142,11 @@
                 <h1 class="text-6xl md:text-8xl font-black mb-8 uppercase leading-none text-white">
                     TALLER <br><span class="text-ferro italic">ESPECIALIZADO</span>
                 </h1>
-                <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <button onclick="showPage('turnos-page')" class="bg-ferro text-black px-12 py-4 rounded-sm font-black text-lg hover:bg-orange-500 transition-all shadow-xl shadow-orange-900/20">
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <button onclick="showPage('turnos-page')" class="w-full sm:w-64 bg-ferro text-black px-8 py-4 rounded-sm font-black text-lg hover:bg-orange-500 transition-all shadow-xl shadow-orange-900/20">
                         SOLICITAR TURNO
                     </button>
-                    <button onclick="showPage('contact-page')" class="bg-white/5 backdrop-blur-md border border-white/10 px-12 py-4 rounded-sm font-black text-lg hover:bg-white/10 transition-all text-white">
+                    <button onclick="showPage('contact-page')" class="w-full sm:w-64 bg-white/5 backdrop-blur-md border border-white/10 px-8 py-4 rounded-sm font-black text-lg hover:bg-white/10 transition-all text-white">
                         CONSULTAR
                     </button>
                 </div>
@@ -149,7 +154,7 @@
         </section>
 
         <!-- Servicios -->
-        <section id="servicios" class="py-24 bg-[#0a0a0a]">
+        <section id="servicios" class="py-24 bg-[#0a0a0a] scroll-mt-nav">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     
@@ -175,14 +180,14 @@
                         </div>
                     </div>
 
-                    <!-- Servicio 03: Reparación (Placeholder hasta que subas foto) -->
+                    <!-- Servicio 03: Tren Delantero -->
                     <div class="relative h-80 group overflow-hidden border border-white/5 rounded-sm">
-                        <img src="muscular-car-service-worker-repairing-vehicle.jpg" alt="Reparación" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                        <img src="TREN DELANTERO.jpg" alt="Tren Delantero" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
                         <div class="absolute inset-0 service-card-overlay z-10"></div>
                         <div class="relative z-20 p-8 h-full flex flex-col justify-end border-t-2 border-ferro">
-                            <h3 class="text-ferro font-black uppercase text-xs tracking-widest mb-2">03. Reparación</h3>
-                            <h4 class="text-xl font-black text-white uppercase mb-2 italic">Mecánica Pesada</h4>
-                            <p class="text-slate-400 text-sm leading-snug">Tren delantero, frenos y reparaciones integrales con garantía escrita.</p>
+                            <h3 class="text-ferro font-black uppercase text-xs tracking-widest mb-2">03. Suspensión</h3>
+                            <h4 class="text-xl font-black text-white uppercase mb-2 italic">Tren Delantero</h4>
+                            <p class="text-slate-400 text-sm leading-snug">Reparación integral de componentes de suspensión y dirección con repuestos de calidad.</p>
                         </div>
                     </div>
 
@@ -191,7 +196,7 @@
         </section>
 
         <!-- Ubicación Corta -->
-        <section id="contacto" class="py-24 bg-zinc-900/20">
+        <section id="contacto" class="py-24 bg-zinc-900/20 scroll-mt-nav">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="bg-black rounded-sm border border-white/5 flex flex-col lg:flex-row overflow-hidden shadow-2xl">
                     <div class="p-12 lg:w-1/2">
