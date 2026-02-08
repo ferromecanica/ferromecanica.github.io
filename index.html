@@ -94,7 +94,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-32 items-center">
                 <div class="flex-shrink-0">
-                    <a href="javascript:void(0)" onclick="showPage('home')" class="logo-container group">
+                    <a href="javascript:void(0)" onclick="showPage('home-page')" class="logo-container group">
                         <span class="logo-ferro font-audiowide uppercase text-white">
                             <span class="text-ferro">F</span>ERRO
                         </span>
@@ -104,9 +104,9 @@
                     </a>
                 </div>
                 <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest items-center">
-                    <a href="javascript:void(0)" onclick="showPage('home')" class="nav-link-hover transition-colors">Inicio</a>
-                    <a href="javascript:void(0)" onclick="showPage('home', 'servicios')" class="nav-link-hover transition-colors">Servicios</a>
-                    <a href="javascript:void(0)" onclick="showPage('home', 'contacto')" class="nav-link-hover transition-colors">Ubicación</a>
+                    <a href="javascript:void(0)" onclick="showPage('home-page')" class="nav-link-hover transition-colors">Inicio</a>
+                    <a href="javascript:void(0)" onclick="showPage('home-page', 'servicios')" class="nav-link-hover transition-colors">Servicios</a>
+                    <a href="javascript:void(0)" onclick="showPage('home-page', 'contacto')" class="nav-link-hover transition-colors">Ubicación</a>
                     <button onclick="showPage('turnos-page')" class="bg-ferro text-black px-6 py-3 rounded-sm font-black hover:bg-orange-500 transition-all">Turnos</button>
                 </div>
             </div>
@@ -136,9 +136,9 @@
                     <button onclick="showPage('turnos-page')" class="bg-ferro text-black px-12 py-4 rounded-sm font-black text-lg hover:bg-orange-500 transition-all shadow-xl shadow-orange-900/20">
                         SOLICITAR TURNO
                     </button>
-                    <a href="javascript:void(0)" onclick="showPage('contact-page')" class="bg-white/5 backdrop-blur-md border border-white/10 px-12 py-4 rounded-sm font-black text-lg hover:bg-white/10 transition-all text-white">
+                    <button onclick="showPage('contact-page')" class="bg-white/5 backdrop-blur-md border border-white/10 px-12 py-4 rounded-sm font-black text-lg hover:bg-white/10 transition-all text-white">
                         CONSULTAR
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>
@@ -183,10 +183,10 @@
         </section>
     </div>
 
-    <!-- VISTA: FORMULARIO DE CONSULTA -->
+    <!-- VISTA: FORMULARIO DE CONSULTA (CONTACTAR) -->
     <div id="contact-page" class="page-view py-32 bg-[#0f0f0f] min-h-screen">
         <div class="max-w-4xl mx-auto px-4">
-            <button onclick="showPage('home')" class="text-ferro font-bold uppercase tracking-widest text-xs mb-12 hover:text-white transition-colors">
+            <button onclick="showPage('home-page')" class="text-ferro font-bold uppercase tracking-widest text-xs mb-12 hover:text-white transition-colors">
                 <i class="fas fa-arrow-left mr-2"></i> Volver al inicio
             </button>
             
@@ -221,7 +221,7 @@
     <!-- VISTA: FORMULARIO DE TURNOS -->
     <div id="turnos-page" class="page-view py-32 bg-[#0f0f0f] min-h-screen">
         <div class="max-w-4xl mx-auto px-4">
-            <button onclick="showPage('home')" class="text-ferro font-bold uppercase tracking-widest text-xs mb-12 hover:text-white transition-colors">
+            <button onclick="showPage('home-page')" class="text-ferro font-bold uppercase tracking-widest text-xs mb-12 hover:text-white transition-colors">
                 <i class="fas fa-arrow-left mr-2"></i> Volver al inicio
             </button>
             
@@ -231,46 +231,40 @@
                 <p class="text-slate-500 uppercase tracking-widest text-xs">Ingresa los datos del vehículo para agendar tu visita</p>
             </div>
 
-            <!-- Formulario de Turnos Actualizado -->
-            <form action="https://formspree.io/f/xqedakee" method="POST" class="grid grid-cols-1 md:grid-cols-4 gap-6 bg-[#151515] p-8 md:p-12 rounded-sm border border-white/10 shadow-2xl">
-                <!-- Nombre: Ocupa todo el ancho -->
-                <div class="md:col-span-4 space-y-2">
+            <form action="https://formspree.io/f/xqedakee" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-[#151515] p-8 md:p-12 rounded-sm border border-white/10 shadow-2xl">
+                <div class="md:col-span-2 space-y-2">
                     <label class="text-[10px] font-black uppercase tracking-widest text-ferro">Nombre del Propietario</label>
                     <input type="text" name="cliente_nombre" required class="w-full rounded-sm px-4 py-4 outline-none transition-colors">
                 </div>
 
-                <!-- Teléfono de contacto: 2 boxes -->
-                <div class="md:col-span-1 space-y-2">
+                <div class="space-y-2">
                     <label class="text-[10px] font-black uppercase tracking-widest text-ferro">Cód. Área (sin 0)</label>
                     <input type="tel" name="telefono_cod_area" required placeholder="341" class="w-full rounded-sm px-4 py-4 outline-none transition-colors">
                 </div>
-                <div class="md:col-span-3 space-y-2">
+                <div class="space-y-2">
                     <label class="text-[10px] font-black uppercase tracking-widest text-ferro">Número (sin 15)</label>
                     <input type="tel" name="telefono_numero" required placeholder="7183101" class="w-full rounded-sm px-4 py-4 outline-none transition-colors">
                 </div>
 
-                <!-- Vehículo (Marca y Modelo unificados) -->
-                <div class="md:col-span-4 space-y-2">
+                <div class="md:col-span-2 space-y-2">
                     <label class="text-[10px] font-black uppercase tracking-widest text-ferro">Vehículo (Marca y Modelo)</label>
                     <input type="text" name="vehiculo_datos" required placeholder="Ej: Toyota Etios X" class="w-full rounded-sm px-4 py-4 outline-none transition-colors">
                 </div>
 
-                <!-- Año y Patente -->
-                <div class="md:col-span-1 space-y-2">
+                <div class="space-y-2">
                     <label class="text-[10px] font-black uppercase tracking-widest text-ferro">Año</label>
                     <input type="number" name="vehiculo_anio" min="1950" max="2027" required placeholder="2019" class="w-full rounded-sm px-4 py-4 outline-none transition-colors">
                 </div>
-                <div class="md:col-span-3 space-y-2">
+                <div class="space-y-2">
                     <label class="text-[10px] font-black uppercase tracking-widest text-ferro">Patente / Dominio</label>
                     <input type="text" name="vehiculo_patente" required placeholder="AB123CD" class="w-full rounded-sm px-4 py-4 outline-none transition-colors">
                 </div>
 
-                <!-- Fecha y Servicio -->
-                <div class="md:col-span-2 space-y-2">
+                <div class="space-y-2">
                     <label class="text-[10px] font-black uppercase tracking-widest text-ferro">Fecha Preferencial</label>
                     <input type="date" name="fecha_turno" required class="w-full rounded-sm px-4 py-4 outline-none transition-colors">
                 </div>
-                <div class="md:col-span-2 space-y-2">
+                <div class="space-y-2">
                     <label class="text-[10px] font-black uppercase tracking-widest text-ferro">Servicio Requerido</label>
                     <select name="servicio_tipo" class="w-full rounded-sm px-4 py-4 outline-none transition-colors appearance-none">
                         <option value="aceite-filtros">Cambio de aceite y filtros</option>
@@ -281,14 +275,12 @@
                     </select>
                 </div>
 
-                <!-- Comentarios -->
-                <div class="md:col-span-4 space-y-2">
+                <div class="md:col-span-2 space-y-2">
                     <label class="text-[10px] font-black uppercase tracking-widest text-ferro">Comentarios Adicionales (Falla detectada)</label>
                     <textarea name="detalles" rows="4" class="w-full rounded-sm px-4 py-4 outline-none resize-none transition-colors"></textarea>
                 </div>
 
-                <!-- Botón -->
-                <div class="md:col-span-4 pt-6">
+                <div class="md:col-span-2 pt-6">
                     <button type="submit" class="w-full bg-ferro text-black font-black py-5 uppercase tracking-widest hover:bg-orange-500 transition-all shadow-xl shadow-orange-900/20">
                         Confirmar Solicitud de Turno
                     </button>
@@ -314,16 +306,20 @@
 
     <script>
         function showPage(pageId, sectionId) {
+            // Ocultar todas las páginas
             document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
             
+            // Mostrar la página solicitada
             const target = document.getElementById(pageId);
             if(target) {
                 target.classList.add('active');
                 if(sectionId) {
                     const element = document.getElementById(sectionId);
-                    if(element) element.scrollIntoView({ behavior: 'smooth' });
+                    if(element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
                 } else {
-                    window.scrollTo(0, 0);
+                    window.scrollTo({ top: 0, behavior: 'instant' });
                 }
             }
         }
