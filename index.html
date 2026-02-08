@@ -24,26 +24,27 @@
             filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
         }
 
-        /* LOGO REDISEÑADO - TAMAÑO GRANDE Y BLOQUE SIMÉTRICO */
+        /* LOGO REDISEÑADO - CENTRADO Y BLOQUE SIMÉTRICO */
         .logo-container {
             display: inline-flex;
             flex-direction: column;
             line-height: 0.75;
-            align-items: flex-start;
+            align-items: center; /* Centrado respecto a FERRO */
         }
         .logo-ferro {
-            font-size: 4.2rem; /* Tamaño aumentado significativamente */
+            font-size: 4.2rem;
             letter-spacing: -0.05em;
             display: block;
         }
         .logo-mecanica {
-            font-size: 1.1rem; /* Agrandado también proporcionalmente */
+            font-size: 1.1rem;
             font-weight: 900;
-            letter-spacing: 0.48em; /* Ajustado para coincidir con el ancho de FERRO */
+            letter-spacing: 0.48em; /* Mantiene el ancho visual */
             width: 100%;
             display: block;
             margin-top: 6px;
-            text-indent: 0.1em;
+            text-align: center;
+            text-indent: 0.48em; /* Compensa el espaciado de la última letra para centrar ópticamente */
         }
         
         .nav-link-hover:hover { color: var(--ferro-orange); }
@@ -83,7 +84,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section con la imagen del taller cargada -->
+    <!-- Hero Section -->
     <section id="inicio" class="relative min-h-[85vh] flex items-center justify-center text-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <!-- Overlay para asegurar lectura -->
@@ -95,7 +96,7 @@
         <div class="relative z-20 max-w-4xl px-4">
             <span class="text-ferro font-black uppercase tracking-[0.4em] text-[10px] mb-4 block">Especialistas en Inyección y Mecánica General</span>
             <h1 class="text-6xl md:text-8xl font-black mb-8 uppercase leading-none text-white">
-                ALTA <br><span class="text-ferro italic">PRECISIÓN</span>
+                TALLER <br><span class="text-ferro italic">ESPECIALIZADO</span>
             </h1>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
                 <a href="https://wa.me/3417183101" class="bg-ferro text-black px-12 py-4 rounded-sm font-black text-lg hover:bg-orange-500 transition-all shadow-xl shadow-orange-900/20">
