@@ -9,7 +9,7 @@
     <!-- Fuentes: Audiowide para FERRO e Inter para el resto -->
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <!-- Iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/0.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --ferro-orange: #E48A06;
@@ -32,9 +32,9 @@
             background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,1) 100%);
         }
 
-        /* Degradado para las tarjetas de servicios */
-        .service-card-overlay {
-            background: linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.6) 100%);
+        /* Degradado para los títulos sobre las fotos de servicios */
+        .service-title-overlay {
+            background: linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.4) 50%, transparent 100%);
         }
 
         /* Sección Shell con transparencia */
@@ -133,67 +133,97 @@
         <!-- Servicios -->
         <section id="servicios" class="py-24 bg-[#0a0a0a] scroll-mt-nav">
             <div class="max-w-6xl mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Servicio 01: Diagnóstico -->
-                    <div class="relative h-80 group overflow-hidden border border-white/5 rounded-sm">
-                        <img src="FOTO SCANEO.jpg" alt="Diagnóstico" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                        <div class="absolute inset-0 service-card-overlay z-10"></div>
-                        <div class="relative z-20 p-8 h-full flex flex-col justify-end border-t-2 border-ferro">
-                            <h3 class="text-ferro font-black uppercase text-[10px] tracking-widest mb-2">01. Diagnóstico</h3>
-                            <h4 class="text-lg font-black text-white uppercase mb-1">Escaneo Computarizado</h4>
-                            <p class="text-slate-400 text-[10px] leading-tight">Diagnóstico multimarca con equipamiento profesional, servicio comparable a una concesionaria oficial. Test completo de módulos del vehículo, ABS/ESP, inyección, cuadro de Instrumentos, inmovilizador, airbag, climatización y módulos adicionales. Búsqueda de fallos tanto electrónicos como mecánicos. Excelente opción como servicio precompra de autos usados.</p>
+                    <div class="bg-zinc-900/40 rounded-sm overflow-hidden border border-white/5 group shadow-lg flex flex-col">
+                        <div class="relative h-64 overflow-hidden border-t-2 border-ferro shrink-0">
+                            <img src="FOTO SCANEO.jpg" alt="Diagnóstico" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                            <div class="absolute inset-0 service-title-overlay z-10"></div>
+                            <div class="absolute bottom-0 left-0 p-6 z-20 w-full">
+                                <h3 class="text-ferro font-black uppercase text-[10px] tracking-widest mb-1">01. Diagnóstico</h3>
+                                <h4 class="text-xl font-black text-white uppercase leading-none">Escaneo Computarizado</h4>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Diagnóstico multimarca con equipamiento profesional, servicio comparable a una concesionaria oficial. Test completo de módulos del vehículo, ABS/ESP, inyección, cuadro de Instrumentos, inmovilizador, airbag, climatización y módulos adicionales. Búsqueda de fallos tanto electrónicos como mecánicos. Excelente opción como servicio precompra de autos usados.
+                            </p>
                         </div>
                     </div>
 
                     <!-- Servicio 02: Mantenimiento -->
-                    <div class="relative h-80 group overflow-hidden border border-white/5 rounded-sm">
-                        <img src="CAMBIO DE ACEITE.jpg" alt="Mantenimiento" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                        <div class="absolute inset-0 service-card-overlay z-10"></div>
-                        <div class="relative z-20 p-8 h-full flex flex-col justify-end border-t-2 border-ferro">
-                            <h3 class="text-ferro font-black uppercase text-[10px] tracking-widest mb-2">02. Mantenimiento</h3>
-                            <h4 class="text-lg font-black text-white uppercase mb-1">Service Premium</h4>
-                            <p class="text-slate-400 text-xs leading-snug">Cambio de aceite y filtros con insumos originales y marcas líderes.</p>
+                    <div class="bg-zinc-900/40 rounded-sm overflow-hidden border border-white/5 group shadow-lg flex flex-col">
+                        <div class="relative h-64 overflow-hidden border-t-2 border-ferro shrink-0">
+                            <img src="CAMBIO DE ACEITE.jpg" alt="Mantenimiento" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                            <div class="absolute inset-0 service-title-overlay z-10"></div>
+                            <div class="absolute bottom-0 left-0 p-6 z-20 w-full">
+                                <h3 class="text-ferro font-black uppercase text-[10px] tracking-widest mb-1">02. Mantenimiento</h3>
+                                <h4 class="text-xl font-black text-white uppercase leading-none">Service Premium</h4>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Cambio de aceite y filtros con insumos originales y marcas líderes. Realizamos un chequeo integral de niveles y puntos de seguridad en cada intervención para garantizar la fiabilidad de su unidad.
+                            </p>
                         </div>
                     </div>
 
                     <!-- Servicio 03: Suspensión -->
-                    <div class="relative h-80 group overflow-hidden border border-white/5 rounded-sm">
-                        <img src="TREN DELANTERO.jpg" alt="Tren Delantero" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                        <div class="absolute inset-0 service-card-overlay z-10"></div>
-                        <div class="relative z-20 p-8 h-full flex flex-col justify-end border-t-2 border-ferro">
-                            <h3 class="text-ferro font-black uppercase text-[10px] tracking-widest mb-2">03. Suspensión y Tren delantero</h3>
-                            <h4 class="text-lg font-black text-white uppercase mb-1">Reparación Integral</h4>
-                            <p class="text-slate-400 text-xs leading-snug">Control y recambio de amortiguadores, bujes y extremos con garantía técnica.</p>
+                    <div class="bg-zinc-900/40 rounded-sm overflow-hidden border border-white/5 group shadow-lg flex flex-col">
+                        <div class="relative h-64 overflow-hidden border-t-2 border-ferro shrink-0">
+                            <img src="TREN DELANTERO.jpg" alt="Tren Delantero" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                            <div class="absolute inset-0 service-title-overlay z-10"></div>
+                            <div class="absolute bottom-0 left-0 p-6 z-20 w-full">
+                                <h3 class="text-ferro font-black uppercase text-[10px] tracking-widest mb-1">03. Tren delantero</h3>
+                                <h4 class="text-xl font-black text-white uppercase leading-none">Reparación Integral</h4>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Control y recambio de amortiguadores, bujes y extremos con garantía técnica. Solucionamos ruidos molestos y falta de estabilidad, devolviendo el confort de marcha original a su vehículo.
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Servicio 04: Electricidad (RESTURADO) -->
-                    <div class="relative h-80 group overflow-hidden border border-white/5 rounded-sm">
-                        <img src="ELECTRICIDAD.png" alt="Electricidad" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                        <div class="absolute inset-0 service-card-overlay z-10"></div>
-                        <div class="relative z-20 p-8 h-full flex flex-col justify-end border-t-2 border-ferro">
-                            <h3 class="text-ferro font-black uppercase text-[10px] tracking-widest mb-2">04. Electricidad y electrónica</h3>
-                            <h4 class="text-lg font-black text-white uppercase mb-1">Sistemas Eléctricos</h4>
-                            <p class="text-slate-400 text-xs leading-snug">Reparación de encendido, alternadores, baterías y módulos de control.</p>
+                    <!-- Servicio 04: Electricidad -->
+                    <div class="bg-zinc-900/40 rounded-sm overflow-hidden border border-white/5 group shadow-lg flex flex-col">
+                        <div class="relative h-64 overflow-hidden border-t-2 border-ferro shrink-0">
+                            <img src="ELECTRICIDAD.png" alt="Electricidad" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                            <div class="absolute inset-0 service-title-overlay z-10"></div>
+                            <div class="absolute bottom-0 left-0 p-6 z-20 w-full">
+                                <h3 class="text-ferro font-black uppercase text-[10px] tracking-widest mb-1">04. Electricidad</h3>
+                                <h4 class="text-xl font-black text-white uppercase leading-none">Sistemas Eléctricos</h4>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Reparación de encendido, alternadores, motores de arranque y baterías. Soluciones especializadas en módulos electrónicos y gestión de energía para todo tipo de vehículos.
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Servicio 05: Motores (RESTURADO) -->
-                    <div class="relative h-80 group overflow-hidden border border-white/5 rounded-sm">
-                        <img src="ARREGLOMOTOR.jpg" alt="Motores" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                        <div class="absolute inset-0 service-card-overlay z-10"></div>
-                        <div class="relative z-20 p-8 h-full flex flex-col justify-end border-t-2 border-ferro">
-                            <h3 class="text-ferro font-black uppercase text-[10px] tracking-widest mb-2">05. Reparación de motores</h3>
-                            <h4 class="text-lg font-black text-white uppercase mb-1">Mecánica de Precisión</h4>
-                            <p class="text-slate-400 text-xs leading-snug">Ajuste completo, tapas de cilindro y puesta a punto de motores nacionales e importados.</p>
+                    <!-- Servicio 05: Motores -->
+                    <div class="bg-zinc-900/40 rounded-sm overflow-hidden border border-white/5 group shadow-lg flex flex-col">
+                        <div class="relative h-64 overflow-hidden border-t-2 border-ferro shrink-0">
+                            <img src="ARREGLOMOTOR.jpg" alt="Motores" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                            <div class="absolute inset-0 service-title-overlay z-10"></div>
+                            <div class="absolute bottom-0 left-0 p-6 z-20 w-full">
+                                <h3 class="text-ferro font-black uppercase text-[10px] tracking-widest mb-1">05. Reparación de motores</h3>
+                                <h4 class="text-xl font-black text-white uppercase leading-none">Mecánica de Precisión</h4>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Ajuste completo, tapas de cilindro y puesta a punto de motores nacionales e importados. Contamos con herramientas de precisión para diagnósticos mecánicos profundos y reparaciones duraderas.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN SHELL (ALIANZA DE CALIDAD - AJUSTADA AL ANCHO) -->
+        <!-- SECCIÓN SHELL (ALIANZA DE CALIDAD) -->
         <section id="shell" class="max-w-6xl mx-auto px-4 pb-24 scroll-mt-nav">
             <div class="relative py-24 flex items-center justify-center overflow-hidden rounded-sm border border-white/5 shadow-2xl">
                 <div class="absolute inset-0 z-0">
@@ -202,11 +232,11 @@
                 </div>
                 
                 <div class="relative z-20 text-center px-4 max-w-2xl">
-                    <h2 class="text-xl md:text-3xl font-black text-white uppercase italic tracking-tighter leading-tight mb-4">
+                    <h2 class="text-xl md:text-2xl font-black text-white uppercase italic tracking-tighter leading-tight mb-4">
                         En Ferro utilizamos <span class="text-ferro">Lubricantes Shell</span>
                     </h2>
-                    <div class="h-1 w-24 bg-ferro mx-auto mb-6"></div>
-                    <p class="text-slate-400 text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] leading-relaxed">
+                    <div class="h-1 w-16 bg-ferro mx-auto mb-6"></div>
+                    <p class="text-slate-400 text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] leading-relaxed">
                         Tecnología de vanguardia para la máxima protección de su motor.
                     </p>
                 </div>
