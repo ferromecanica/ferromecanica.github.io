@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferro Mecánica | Servicio Integral del Automotor</title>
-    
-    <!-- LÍNEA PARA EL FAVICON (El icono que ves en Google) -->
-    <!-- Debes subir un archivo llamado favicon.png a tu GitHub -->
-    <link rel="icon" type="image/png" href="favicon.png">
-
     <!-- Tailwind para diseño moderno -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fuentes: Audiowide para FERRO e Inter para el resto -->
@@ -90,6 +85,7 @@
     <nav class="bg-black/95 backdrop-blur-lg shadow-xl sticky top-0 z-50 border-b border-white/5">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-center md:justify-end h-24 items-center">
+                <!-- Se eliminó CALIDAD y se aumentó el tamaño de fuente y espaciado -->
                 <div class="flex space-x-6 sm:space-x-10 text-[11px] sm:text-[13px] font-bold uppercase tracking-widest items-center">
                     <a href="javascript:void(0)" onclick="showPage('home-page')" class="nav-link-hover transition-colors">Inicio</a>
                     <a href="javascript:void(0)" onclick="showPage('home-page', 'servicios')" class="nav-link-hover transition-colors">Servicios</a>
@@ -139,7 +135,7 @@
             <div class="max-w-6xl mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <!-- Servicio 01 -->
+                    <!-- Servicio 01: Diagnóstico -->
                     <div class="bg-zinc-900/40 rounded-sm overflow-hidden border border-white/5 group shadow-lg flex flex-col">
                         <div class="relative h-64 overflow-hidden border-t-2 border-ferro shrink-0">
                             <img src="FOTO SCANEO.jpg" alt="Diagnóstico" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
@@ -151,12 +147,12 @@
                         </div>
                         <div class="p-6 pt-2 flex-grow">
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Diagnóstico multimarca con equipamiento profesional. Test completo de módulos, ABS, inyección, airbag y más.
+                                Diagnóstico multimarca con equipamiento profesional, servicio comparable a una concesionaria oficial. Test completo de módulos del vehículo, ABS/ESP, inyección, cuadro de Instrumentos, inmovilizador, airbag, climatización y módulos adicionales. Búsqueda de fallos tanto electrónicos como mecánicos. Excelente opción como servicio precompra de autos usados.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Servicio 02 -->
+                    <!-- Servicio 02: Mantenimiento -->
                     <div class="bg-zinc-900/40 rounded-sm overflow-hidden border border-white/5 group shadow-lg flex flex-col">
                         <div class="relative h-64 overflow-hidden border-t-2 border-ferro shrink-0">
                             <img src="CAMBIO DE ACEITE.jpg" alt="Mantenimiento" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
@@ -168,75 +164,75 @@
                         </div>
                         <div class="p-6 pt-2 flex-grow">
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Mantenimiento preventivo de cambio de aceite y filtros con chequeo integral de niveles y fluidos.
+                                Mantenimiento preventivo de cambio de aceite y filtros. Aprovechamos para realizar un chequeo integral de todos los niveles de fluidos. Se finaliza el servicio entregando al cliente un reporte del mantenimiento realizado.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Servicio 03 -->
+                    <!-- Servicio 03: Tren delantero -->
                     <div class="bg-zinc-900/40 rounded-sm overflow-hidden border border-white/5 group shadow-lg flex flex-col">
                         <div class="relative h-64 overflow-hidden border-t-2 border-ferro shrink-0">
-                            <img src="REPARACION FRENOS.jpg" alt="Frenos" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                            <img src="TREN DELANTERO.jpg" alt="Tren Delantero" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
                             <div class="absolute inset-0 service-title-overlay z-10"></div>
                             <div class="absolute bottom-0 left-0 p-6 z-20 w-full">
-                                <h3 class="text-ferro font-black uppercase text-xl tracking-tighter mb-2">03. Seguridad</h3>
-                                <h4 class="text-[13px] font-black text-white uppercase tracking-widest leading-none">Sistemas de Frenos</h4>
+                                <h3 class="text-ferro font-black uppercase text-xl tracking-tighter mb-2">03. Tren delantero</h3>
+                                <h4 class="text-[13px] font-black text-white uppercase tracking-widest leading-none">Reparación Integral</h4>
                             </div>
                         </div>
                         <div class="p-6 pt-2 flex-grow">
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Rectificación de discos, cambio de pastillas y fluido. Garantizamos la máxima potencia de frenado.
+                                El servicio de tren delantero es esencial para la seguridad, estabilidad y confort del vehículo, incluyendo la revisión y reparación de suspensión, dirección y frenos. La revisión abarca componentes como amortiguadores, rótulas, bujes, extremos de dirección, parrillas, bieletas, discos y pastillas.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Servicio 04 -->
+                    <!-- Servicio 04: Electricidad -->
                     <div class="bg-zinc-900/40 rounded-sm overflow-hidden border border-white/5 group shadow-lg flex flex-col">
                         <div class="relative h-64 overflow-hidden border-t-2 border-ferro shrink-0">
-                            <img src="TREN DELANTERO.jpg" alt="Suspensión" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                            <img src="ELECTRICIDAD.png" alt="Electricidad" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
                             <div class="absolute inset-0 service-title-overlay z-10"></div>
                             <div class="absolute bottom-0 left-0 p-6 z-20 w-full">
-                                <h3 class="text-ferro font-black uppercase text-xl tracking-tighter mb-2">04. Confort</h3>
-                                <h4 class="text-[13px] font-black text-white uppercase tracking-widest leading-none">Tren Delantero</h4>
+                                <h3 class="text-ferro font-black uppercase text-xl tracking-tighter mb-2">04. Electricidad</h3>
+                                <h4 class="text-[13px] font-black text-white uppercase tracking-widest leading-none">Sistemas Eléctricos</h4>
                             </div>
                         </div>
                         <div class="p-6 pt-2 flex-grow">
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Revisión de amortiguación, extremos y bujes. Eliminamos ruidos y mejoramos la estabilidad del vehículo.
+                                Reparación de encendido, alternadores, motores de arranque y baterías. Soluciones especializadas en módulos electrónicos y gestión de energía para todo tipo de vehículos.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Servicio 05 -->
+                    <!-- Servicio 05: Motores -->
                     <div class="bg-zinc-900/40 rounded-sm overflow-hidden border border-white/5 group shadow-lg flex flex-col">
                         <div class="relative h-64 overflow-hidden border-t-2 border-ferro shrink-0">
-                            <img src="ELECTRICIDAD.jpg" alt="Electricidad" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                            <img src="ARREGLOMOTOR.jpg" alt="Motores" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
                             <div class="absolute inset-0 service-title-overlay z-10"></div>
                             <div class="absolute bottom-0 left-0 p-6 z-20 w-full">
-                                <h3 class="text-ferro font-black uppercase text-xl tracking-tighter mb-2">05. Electricidad</h3>
-                                <h4 class="text-[13px] font-black text-white uppercase tracking-widest leading-none">Encendido e Iluminación</h4>
+                                <h3 class="text-ferro font-black uppercase text-xl tracking-tighter mb-2">05. Motores y Transmisión</h3>
+                                <h4 class="text-[13px] font-black text-white uppercase tracking-widest leading-none">Mecánica de Precisión</h4>
                             </div>
                         </div>
                         <div class="p-6 pt-2 flex-grow">
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Control de baterías, alternadores y sistemas de iluminación. Reparaciones eléctricas precisas.
+                                Realizamos desde trabajos básicos, hasta la reparación integral de motores y transmisiones de alta complejidad. Estos servicios abarcan: limpieza, prueba y calibración de Inyectores en banco propio, medición de compresión, reparación de tapa de cilindros, reemplazo de correas o cadenas de distribución, tensores y correas poly-V, bombas de agua, y más, consúltenos.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Servicio 06 -->
+                    <!-- Servicio 06: Software de Gestión -->
                     <div class="bg-zinc-900/40 rounded-sm overflow-hidden border border-white/5 group shadow-lg flex flex-col">
                         <div class="relative h-64 overflow-hidden border-t-2 border-ferro shrink-0">
-                            <img src="soft-erp.jpg" alt="Software de Gestión" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                            <img src="software-gestion.jpg" alt="Software de Gestión" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
                             <div class="absolute inset-0 service-title-overlay z-10"></div>
                             <div class="absolute bottom-0 left-0 p-6 z-20 w-full">
-                                <h3 class="text-ferro font-black uppercase text-xl tracking-tighter mb-2">06. Gestión</h3>
-                                <h4 class="text-[13px] font-black text-white uppercase tracking-widest leading-none">Trazabilidad Digital</h4>
+                                <h3 class="text-ferro font-black uppercase text-xl tracking-tighter mb-2">06. Software de Gestión</h3>
+                                <h4 class="text-[13px] font-black text-white uppercase tracking-widest leading-none">Sistema de Gestión Propio</h4>
                             </div>
                         </div>
                         <div class="p-6 pt-2 flex-grow">
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Sistema propio de órdenes de trabajo. Acceso al historial completo de reparaciones de su unidad.
+                                Hemos desarrollado un software de gestión a medida de las necesidades del taller. Este sistema nos permite tener una valiosa trazabilidad de cada vehículo que ingresa a Ferro. Presupuestos sencillos, gestión de turnos, manejo de stock, consumo de repuestos y lo más importante: órdenes de trabajo de taller y reportes automáticos de mantenimiento. En definitiva, en Ferro conservamos todo el historial de tu vehículo que puede ser consultado en cualquier momento.
                             </p>
                         </div>
                     </div>
@@ -244,25 +240,27 @@
             </div>
         </section>
 
-        <!-- SECCIÓN SHELL -->
+        <!-- SECCIÓN SHELL (ALIANZA DE CALIDAD) -->
         <section id="shell" class="max-w-6xl mx-auto px-4 pb-24 scroll-mt-nav">
             <div class="relative py-24 flex items-center justify-center overflow-hidden rounded-sm border border-white/5 shadow-2xl">
                 <div class="absolute inset-0 z-0">
                     <div class="absolute inset-0 shell-overlay z-10"></div>
                     <img src="shell-lubricantes.jpg" alt="Alianza Shell" class="w-full h-full object-cover">
                 </div>
+                
                 <div class="relative z-20 text-center px-4 max-w-2xl">
-                    <h2 class="text-xl md:text-2xl font-black text-white uppercase italic tracking-tighter mb-4">
+                    <h2 class="text-xl md:text-2xl font-black text-white uppercase italic tracking-tighter leading-tight mb-4">
                         En Ferro utilizamos <span class="text-ferro">Lubricantes Shell</span>
                     </h2>
-                    <p class="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em]">
-                        Tecnología de vanguardia para su motor.
+                    <div class="h-1 w-16 bg-ferro mx-auto mb-6"></div>
+                    <p class="text-slate-400 text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] leading-relaxed">
+                        Tecnología de vanguardia para la máxima protección de su motor.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Ubicación -->
+        <!-- Ubicación y Redes -->
         <section id="contacto" class="py-24 bg-zinc-900/20 scroll-mt-nav">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="bg-black rounded-sm border border-white/5 flex flex-col lg:flex-row overflow-hidden shadow-2xl">
@@ -271,53 +269,189 @@
                             <h2 class="text-2xl font-black uppercase mb-8 text-white tracking-widest">Contacto</h2>
                             <div class="space-y-6 text-slate-300 text-sm tracking-wide">
                                 <p><i class="fas fa-map-marker-alt text-ferro mr-3"></i> Santa María de Oro 217 bis, Rosario</p>
-                                <p><i class="fab fa-whatsapp text-ferro mr-3"></i> 341 718-3101</p>
-                                <p><i class="far fa-envelope text-ferro mr-3"></i> ferrotaller@outlook.com</p>
-                                <p><i class="fas fa-clock text-ferro mr-3"></i> Lun a Vie: 08:00 a 17:00 | Sáb: 09:00 a 13:00</p>
+                                <p><i class="fab fa-whatsapp text-ferro mr-3 text-base"></i> 341 718-3101</p>
+                                <p>
+                                    <a href="mailto:ferrotaller@outlook.com" class="hover:text-ferro transition-colors">
+                                        <i class="far fa-envelope text-ferro mr-3 text-base"></i> ferrotaller@outlook.com
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://instagram.com/ferromecanica" target="_blank" class="hover:text-ferro transition-colors">
+                                        <i class="fab fa-instagram text-ferro mr-3 text-base"></i> @ferromecanica
+                                    </a>
+                                </p>
+                                <!-- Se agregaron los horarios de sábado -->
+                                <p><i class="fas fa-clock text-ferro mr-3"></i> Lun a Vie: 08:00 a 17:00 | Sáb: 09:00 a 13:00 hs</p>
                             </div>
                         </div>
                     </div>
-                    <div class="lg:w-1/2 h-80 min-h-[400px]">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.563!2d-60.676!3d-32.912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b653!2sSanta%20Mar%C3%ADa%20de%20Oro%20217%20bis!5e0!3m2!1ses!2sar!4v12345" class="w-full h-full border-none dark-map" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="lg:w-1/2 h-80 lg:h-auto min-h-[400px]">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.563456345634!2d-60.6766!3d-32.9123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b6534563456345%3A0x6345634563456345!2sSanta%20Mar%C3%ADa%20de%20Oro%20217%20bis%2C%20Rosario%2C%20Santa%20Fe!5e0!3m2!1ses!2sar!4v123456789" class="w-full h-full border-none dark-map" allowfullscreen="" loading="lazy"></iframe>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Barra de Confianza (Pagos y Fiscal) -->
+        <section class="py-12 bg-black border-y border-white/5">
+            <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-center">
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-credit-card text-ferro text-2xl mb-3"></i>
+                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-400">Tarjetas de Crédito</p>
+                    <p class="text-[9px] text-slate-500 uppercase mt-1">Aceptamos todas las tarjetas</p>
+                </div>
+                <div class="flex flex-col items-center border-y md:border-y-0 md:border-x border-white/10 py-8 md:py-0">
+                    <i class="fas fa-money-bill-transfer text-ferro text-2xl mb-3"></i>
+                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-400">Pagos Directos</p>
+                    <p class="text-[9px] text-slate-500 uppercase mt-1">Efectivo o Transferencias</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-file-invoice text-ferro text-2xl mb-3"></i>
+                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-400">Responsable Inscripto</p>
+                    <p class="text-[9px] text-slate-500 uppercase mt-1">Facturación y seriedad técnica</p>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- VISTA: TURNOS -->
+    <!-- VISTA: FORMULARIO DE CONSULTA -->
+    <div id="contact-page" class="page-view py-32 bg-[#0f0f0f] min-h-screen">
+        <div class="max-w-4xl mx-auto px-4">
+            <button onclick="showPage('home-page')" class="text-ferro font-bold uppercase tracking-widest text-[10px] mb-12 hover:text-white transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i> Volver al inicio
+            </button>
+            
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black uppercase text-white mb-4 tracking-tighter">Consulta Online</h2>
+                <div class="h-1 w-16 bg-ferro mx-auto mb-6"></div>
+                <p class="text-slate-500 uppercase tracking-widest text-[9px]">Dudas técnicas o presupuestos generales</p>
+            </div>
+
+            <form action="https://formspree.io/f/xqedakee" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-[#151515] p-8 md:p-12 rounded-sm border border-white/10 shadow-2xl">
+                <div class="space-y-2">
+                    <label class="text-[9px] font-black uppercase tracking-widest text-ferro">Nombre Completo</label>
+                    <input type="text" name="name" required class="w-full rounded-sm px-4 py-3 text-sm outline-none transition-colors">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[9px] font-black uppercase tracking-widest text-ferro">Teléfono</label>
+                    <input type="tel" name="phone" required class="w-full rounded-sm px-4 py-3 text-sm outline-none transition-colors">
+                </div>
+                <div class="md:col-span-2 space-y-2">
+                    <label class="text-[9px] font-black uppercase tracking-widest text-ferro">Mensaje</label>
+                    <textarea name="message" rows="5" required class="w-full rounded-sm px-4 py-3 text-sm outline-none resize-none"></textarea>
+                </div>
+                <div class="md:col-span-2 pt-6">
+                    <button type="submit" class="w-full bg-ferro text-black font-black py-4 text-xs uppercase tracking-[0.2em] hover:bg-orange-500 transition-all shadow-xl shadow-orange-900/20">
+                        Enviar Consulta
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- VISTA: FORMULARIO DE TURNOS -->
     <div id="turnos-page" class="page-view py-32 bg-[#0f0f0f] min-h-screen">
         <div class="max-w-4xl mx-auto px-4">
-            <button onclick="showPage('home-page')" class="text-ferro font-bold uppercase tracking-widest text-[10px] mb-12">
-                <i class="fas fa-arrow-left mr-2"></i> Volver
+            <button onclick="showPage('home-page')" class="text-ferro font-bold uppercase tracking-widest text-[10px] mb-12 hover:text-white transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i> Volver al inicio
             </button>
-            <form action="https://formspree.io/f/xqedakee" method="POST" class="bg-[#151515] p-8 md:p-12 rounded-sm border border-white/10">
-                <h2 class="text-2xl font-black text-white uppercase mb-8">Solicitud de Turno</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" name="nombre" placeholder="Nombre" required class="p-3">
-                    <input type="tel" name="tel" placeholder="WhatsApp" required class="p-3">
-                    <input type="text" name="patente" placeholder="Patente" required class="p-3">
-                    <input type="date" name="fecha" required class="p-3">
-                    <textarea name="detalle" placeholder="¿Qué necesita el vehículo?" class="md:col-span-2 p-3 h-32"></textarea>
-                    <button type="submit" class="md:col-span-2 bg-ferro text-black font-black py-4 uppercase tracking-widest">Enviar</button>
+            
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black uppercase text-white mb-4 tracking-tighter">Reserva de Turno</h2>
+                <div class="h-1 w-16 bg-ferro mx-auto mb-6"></div>
+                <p class="text-slate-500 uppercase tracking-widest text-[9px]">Datos del vehículo para agendar tu visita</p>
+            </div>
+
+            <form action="https://formspree.io/f/xqedakee" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-[#151515] p-8 md:p-12 rounded-sm border border-white/10 shadow-2xl">
+                <div class="md:col-span-2 space-y-2">
+                    <label class="text-[9px] font-black uppercase tracking-widest text-ferro">Nombre del Propietario</label>
+                    <input type="text" name="cliente_nombre" required class="w-full rounded-sm px-4 py-3 text-sm outline-none transition-colors">
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-[9px] font-black uppercase tracking-widest text-ferro">Cód. Área (sin 0)</label>
+                    <input type="tel" name="telefono_cod_area" required placeholder="341" class="w-full rounded-sm px-4 py-3 text-sm outline-none transition-colors">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[9px] font-black uppercase tracking-widest text-ferro">Número (sin 15)</label>
+                    <input type="tel" name="telefono_numero" required placeholder="7183101" class="w-full rounded-sm px-4 py-3 text-sm outline-none transition-colors">
+                </div>
+
+                <div class="md:col-span-2 space-y-2">
+                    <label class="text-[9px] font-black uppercase tracking-widest text-ferro">Vehículo (Marca y Modelo)</label>
+                    <input type="text" name="vehiculo_datos" required placeholder="Ej: Toyota Etios X" class="w-full rounded-sm px-4 py-3 text-sm outline-none transition-colors">
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-[9px] font-black uppercase tracking-widest text-ferro">Año</label>
+                    <input type="number" name="vehiculo_anio" min="1950" max="2027" required placeholder="2019" class="w-full rounded-sm px-4 py-3 text-sm outline-none transition-colors">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[9px] font-black uppercase tracking-widest text-ferro">Patente / Dominio</label>
+                    <input type="text" name="vehiculo_patente" required placeholder="AB123CD" class="w-full rounded-sm px-4 py-3 text-sm outline-none transition-colors">
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-[9px] font-black uppercase tracking-widest text-ferro">Fecha Preferencial</label>
+                    <input type="date" name="fecha_turno" required class="w-full rounded-sm px-4 py-3 text-sm outline-none transition-colors">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[9px] font-black uppercase tracking-widest text-ferro">Servicio Requerido</label>
+                    <select name="servicio_tipo" class="w-full rounded-sm px-4 py-3 text-sm outline-none transition-colors appearance-none bg-[#1c1c1c]">
+                        <option value="aceite-filtros">Cambio de aceite y filtros</option>
+                        <option value="frenos">Frenos / Tren Delantero</option>
+                        <option value="inyeccion">Inyección Electrónica</option>
+                        <option value="reparacion-general">Reparación General</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-2 space-y-2">
+                    <label class="text-[9px] font-black uppercase tracking-widest text-ferro">Comentarios Adicionales</label>
+                    <textarea name="detalles" rows="4" class="w-full rounded-sm px-4 py-3 text-sm outline-none resize-none transition-colors"></textarea>
+                </div>
+
+                <div class="md:col-span-2 pt-6">
+                    <button type="submit" class="w-full bg-ferro text-black font-black py-4 text-xs uppercase tracking-[0.2em] hover:bg-orange-500 transition-all shadow-xl shadow-orange-900/20">
+                        Confirmar Solicitud de Turno
+                    </button>
                 </div>
             </form>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-black py-12 border-t border-white/5 text-center">
-        <h2 class="font-audiowide text-2xl uppercase text-white mb-4"><span class="text-ferro">F</span>ERRO</h2>
-        <p class="text-[9px] text-slate-600 uppercase tracking-[0.5em]">© 2026 Ferro Mecánica • Rosario</p>
+    <footer class="bg-black py-16 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="font-audiowide text-4xl uppercase text-white mb-2">
+                <span class="text-ferro">F</span>ERRO
+            </h2>
+            <div class="flex justify-center space-x-6 mb-8 mt-4">
+                <a href="https://wa.me/3417183101" target="_blank" class="text-slate-500 hover:text-ferro transition-colors text-lg"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:ferrotaller@outlook.com" class="text-slate-500 hover:text-ferro transition-colors text-lg"><i class="far fa-envelope"></i></a>
+                <a href="https://instagram.com/ferromecanica" target="_blank" class="text-slate-500 hover:text-ferro transition-colors text-lg"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="text-[9px] text-slate-600 uppercase tracking-[0.5em]">© 2026 Ferro Mecánica • Rosario, Argentina</p>
+        </div>
     </footer>
 
     <script>
         function showPage(pageId, sectionId) {
             document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-            if(sectionId) document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-            else window.scrollTo({ top: 0 });
+            const target = document.getElementById(pageId);
+            if(target) {
+                target.classList.add('active');
+                if(sectionId) {
+                    const element = document.getElementById(sectionId);
+                    if(element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+                }
+            }
         }
     </script>
+
 </body>
 </html>
