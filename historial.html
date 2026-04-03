@@ -55,7 +55,7 @@
         </div>
     </nav>
 
-    <section class="relative min-h-[55vh] flex items-center justify-center overflow-hidden">
+    <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 hero-overlay z-10"></div>
             <img src="foto_historial.png" alt="Historial Ferro" class="w-full h-full object-cover">
@@ -91,11 +91,13 @@
         </div>
     </section>
 
-    <main id="resultado" class="hidden max-w-4xl mx-auto px-4 pb-12 relative z-30 -mt-40">
+    <main id="resultado" class="hidden max-w-4xl mx-auto px-4 pb-12 relative z-30 -mt-24 md:-mt-32">
         
-        <img id="car-img" src="" class="car-model-header absolute z-0 left-1/2 -translate-x-1/2 top-[-210px] w-[90%] md:w-[70%] h-auto" style="display: none;">
+        <div class="flex justify-center mb-[-40px] md:mb-[-60px] relative z-0">
+             <img id="car-img" src="" class="car-model-header w-[90%] md:w-[75%] h-auto" style="display: none;">
+        </div>
 
-        <div class="bg-[#242424] backdrop-blur-md rounded-sm border border-white/10 p-8 mb-8 border-l-4 border-l-ferro shadow-2xl relative z-10 mt-60">
+        <div class="bg-[#242424] backdrop-blur-md rounded-sm border border-white/10 p-8 mb-8 border-l-4 border-l-ferro shadow-2xl relative z-10">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                     <h3 id="nombre-cliente" class="font-open font-extrabold text-2xl text-white uppercase tracking-tight leading-none"></h3>
@@ -109,6 +111,7 @@
                 </button>
             </div>
         </div>
+
         <div id="lista-ot" class="space-y-6"></div>
     </main>
 
@@ -127,14 +130,12 @@
             const authContainer = document.getElementById('auth-container');
             const resultado = document.getElementById('resultado');
 
-            // 1. Verificación básica antes de empezar
             if (!emailInput || !patenteInput) {
                 errorMsg.innerText = "Por favor, complete ambos campos.";
                 errorMsg.classList.remove('hidden');
                 return;
             }
 
-            // 2. Mostrar loader y ocultar login
             errorMsg.classList.add('hidden');
             loader.classList.remove('hidden');
             authContainer.classList.add('hidden');
@@ -150,24 +151,21 @@
                     errorMsg.classList.remove('hidden');
                     authContainer.classList.remove('hidden');
                 } else {
-                    // Llenar datos de texto
-                    document.getElementById('nombre-cliente').innerText = data.cliente || "Cliente";
-                    document.getElementById('datos-auto').innerText = data.vehiculo || "";
+                    document.getElementById('nombre-cliente').innerText = data.cliente;
+                    document.getElementById('datos-auto').innerText = data.vehiculo;
                     
-                    // Lógica del auto (Mejorada para que no rompa el script)
                     const carImg = document.getElementById('car-img');
                     if (data.vehiculo) {
-                        const normalized = data.vehiculo.toLowerCase().trim().replace(/\s+/g, '_');
-                        carImg.src = `assets/${normalized}.jpg`;
+                        // Normalización: "Nissan Tiida" -> "nissan_tiida"
+                        const normalizedName = data.vehiculo.toLowerCase().trim().replace(/\s+/g, '_');
+                        carImg.src = `assets/${normalizedName}.jpg`;
                         carImg.onload = () => carImg.style.display = 'block';
                         carImg.onerror = () => carImg.style.display = 'none';
                     }
 
-                    // Próximo service
                     const proximoServiceReciente = data.historial.find(ot => ot.proximo && ot.proximo !== "");
                     document.getElementById('val-smart-service').innerText = proximoServiceReciente ? proximoServiceReciente.proximo : "---";
 
-                    // Armar lista de servicios
                     let htmlHistorial = "";
                     if (!data.historial || data.historial.length === 0) {
                         htmlHistorial = '<div class="text-center text-slate-500 py-12 uppercase text-xs tracking-widest font-bold">No se registran servicios cerrados.</div>';
@@ -199,7 +197,6 @@
                 authContainer.classList.remove('hidden');
                 errorMsg.innerText = "Error de conexión. Intente más tarde.";
                 errorMsg.classList.remove('hidden');
-                console.error(err);
             }
         }
     </script>
