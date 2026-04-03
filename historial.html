@@ -7,7 +7,7 @@
     
     <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;700;900&family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
@@ -16,6 +16,7 @@
         .text-ferro { color: var(--ferro-orange); }
         .border-ferro { border-color: var(--ferro-orange); }
         .font-audiowide { font-family: 'Audiowide', cursive; }
+        .font-open { font-family: 'Open Sans', sans-serif; }
         
         /* FONDO GRIS OSCURO */
         body { font-family: 'Inter', sans-serif; background-color: #1a1a1a; }
@@ -85,11 +86,11 @@
     </section>
 
     <main id="resultado" class="hidden max-w-4xl mx-auto px-4 pb-12 relative z-30 -mt-40">
-        <div class="bg-[#242424] backdrop-blur-md rounded-sm border border-white/10 p-8 mb-8 border-l-4 border-l-ferro shadow-2xl relative z-10">
+        <div class="bg-[#242424] backdrop-blur-md rounded-sm border border-white/10 p-8 mb-8 border-l-4 border-l-ferro shadow-2xl">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
-                    <h3 id="nombre-cliente" class="font-black text-2xl text-white uppercase tracking-tight leading-tight"></h3>
-                    <p id="datos-auto" class="text-slate-400 font-bold text-sm uppercase tracking-widest mt-2"></p>
+                    <h3 id="nombre-cliente" class="font-open font-extrabold text-2xl text-white uppercase tracking-tight leading-none"></h3>
+                    <p id="datos-auto" class="text-slate-400 font-bold text-sm uppercase tracking-widest mt-3"></p>
                     <div id="smart-service" class="mt-4 inline-block bg-ferro/10 border border-ferro/30 px-3 py-1 rounded-sm text-ferro text-[11px] font-black uppercase tracking-widest">
                         Próximo servicio: <span id="val-smart-service">---</span> KM
                     </div>
