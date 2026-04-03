@@ -1,68 +1,111 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Historial - Ferro Mecánica</title>
+    <title>Mi Historial | Ferro Mecánica</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
-        :root { --naranja: #E48A06; --oscuro: #333; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; color: var(--oscuro); margin: 0; padding: 20px; }
-        .login-box { max-width: 400px; margin: 50px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 5px solid var(--naranja); }
-        h2 { color: var(--naranja); text-align: center; margin-top: 0; text-transform: uppercase; font-size: 22px; }
-        label { display: block; margin: 10px 0 5px; font-weight: bold; font-size: 14px; }
-        input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 16px; }
-        button { width: 100%; padding: 12px; background: var(--naranja); border: none; color: white; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 16px; transition: 0.3s; }
-        button:hover { background: #c67705; }
-        
-        #resultado { max-width: 800px; margin: 20px auto; display: none; }
-        .card { background: white; padding: 20px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: relative; }
-        .fecha { color: var(--naranja); font-weight: bold; font-size: 14px; margin-bottom: 8px; }
-        .btn-pdf { display: inline-block; margin-top: 15px; padding: 10px 20px; background: white; text-decoration: none; color: var(--naranja); border-radius: 6px; font-size: 13px; font-weight: bold; border: 2px solid var(--naranja); transition: 0.3s; }
-        .btn-pdf:hover { background: var(--naranja); color: white; }
-        
-        .loading { text-align: center; display: none; margin: 50px auto; }
-        .spinner { border: 4px solid rgba(0, 0, 0, 0.1); width: 36px; height: 36px; border-radius: 50%; border-left-color: var(--naranja); animation: spin 1s linear infinite; margin: auto; }
+        :root { --ferro-orange: #E48A06; }
+        .bg-ferro { background-color: var(--ferro-orange); }
+        .text-ferro { color: var(--ferro-orange); }
+        .border-ferro { border-color: var(--ferro-orange); }
+        .font-audiowide { font-family: 'Audiowide', cursive; }
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; }
+
+        /* Mismo overlay del index */
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,1) 100%);
+        }
+
+        .spinner { border: 3px solid rgba(228, 138, 6, 0.1); width: 36px; height: 36px; border-radius: 50%; border-left-color: var(--ferro-orange); animation: spin 1s linear infinite; margin: auto; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        
-        #error-msg { color: #d93025; background: #fce8e6; padding: 10px; border-radius: 6px; font-size: 13px; text-align: center; margin-top: 15px; display: none; border: 1px solid #f1b0b7; }
+
+        /* Estilo de los inputs igual al formulario de turnos */
+        input {
+            background-color: #1c1c1c !important;
+            border: 1px solid rgba(255,255,255,0.1) !important;
+            color: white !important;
+        }
+        input:focus { border-color: var(--ferro-orange) !important; outline: none; }
     </style>
 </head>
-<body>
+<body class="text-slate-100">
 
-    <div class="login-box" id="auth-box">
-        <h2>Mi Historial Técnico</h2>
-        <p style="text-align: center; font-size: 13px; color: #666; margin-bottom: 20px;">Consultá los servicios realizados a tu vehículo.</p>
-        
-        <label>Email</label>
-        <input type="email" id="email" placeholder="ejemplo@correo.com" required>
-        
-        <label>Patente</label>
-        <input type="text" id="patente" placeholder="ABC123" required>
-        
-        <button onclick="consultarHistorial()">INGRESAR AL PORTAL</button>
-        <div id="error-msg"></div>
-    </div>
+    <nav class="bg-black/95 backdrop-blur-lg border-b border-white/5 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html" class="font-audiowide text-2xl uppercase tracking-tighter">
+                <span class="text-ferro">F</span>ERRO
+            </a>
+            <a href="index.html" class="text-[11px] font-black uppercase tracking-widest text-slate-400 hover:text-ferro transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i> Volver al sitio
+            </a>
+        </div>
+    </nav>
 
-    <div class="loading" id="loader">
-        <div class="spinner"></div>
-        <p style="color: var(--naranja); font-weight: bold; margin-top: 10px;">Buscando registros...</p>
-    </div>
+    <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 hero-overlay z-10"></div>
+            <img src="foto_historial.png" alt="Historial Ferro" class="w-full h-full object-cover">
+        </div>
 
-    <div id="resultado">
-        <div class="card" style="border-left: 6px solid var(--naranja); background: #fdfdfd;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <h3 id="nombre-cliente" style="margin: 0; text-transform: uppercase;"></h3>
-                    <p id="datos-auto" style="margin: 5px 0 0 0; color: #666; font-weight: bold;"></p>
+        <div class="relative z-20 w-full max-w-md px-4" id="auth-container">
+            <div class="bg-black/60 backdrop-blur-xl p-8 rounded-sm border border-white/10 shadow-2xl">
+                <h2 class="font-audiowide text-2xl text-center text-white mb-2 uppercase tracking-tighter">
+                    Acceso <span class="text-ferro">Técnico</span>
+                </h2>
+                <p class="text-[10px] text-center text-slate-400 uppercase tracking-[0.2em] mb-8">Portal de Historial Ferro Mecánica</p>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="text-[9px] font-black uppercase tracking-widest text-ferro block mb-2">Email del Cliente</label>
+                        <input type="email" id="email" placeholder="ejemplo@correo.com" class="w-full rounded-sm px-4 py-3 text-sm transition-all">
+                    </div>
+                    <div>
+                        <label class="text-[9px] font-black uppercase tracking-widest text-ferro block mb-2">Patente del Vehículo</label>
+                        <input type="text" id="patente" placeholder="ABC123" class="w-full rounded-sm px-4 py-3 text-sm transition-all uppercase">
+                    </div>
+                    <button onclick="consultarHistorial()" class="w-full bg-ferro text-black font-black py-4 text-xs uppercase tracking-[0.2em] hover:bg-orange-500 transition-all shadow-xl shadow-orange-900/20 mt-4">
+                        INGRESAR AL PORTAL
+                    </button>
+                    <div id="error-msg" class="hidden text-red-500 text-[11px] text-center mt-4 font-bold bg-red-500/10 p-2 rounded"></div>
                 </div>
-                <button onclick="location.reload()" style="width: auto; padding: 5px 10px; font-size: 12px; background: #666;">SALIR</button>
             </div>
         </div>
-        <div id="lista-ot"></div>
-    </div>
+
+        <div id="loader" class="hidden relative z-20 text-center">
+            <div class="spinner"></div>
+            <p class="text-ferro text-[10px] font-black uppercase tracking-widest mt-4">Sincronizando con el servidor...</p>
+        </div>
+    </section>
+
+    <main id="resultado" class="hidden max-w-4xl mx-auto px-4 py-12">
+        <div class="bg-zinc-900/40 rounded-sm border border-white/5 p-6 mb-8 border-l-4 border-l-ferro">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h3 id="nombre-cliente" class="font-audiowide text-2xl text-white uppercase tracking-tighter"></h3>
+                    <p id="datos-auto" class="text-ferro font-bold text-sm uppercase tracking-widest mt-1"></p>
+                </div>
+                <button onclick="location.reload()" class="text-[10px] font-black bg-white/5 border border-white/10 px-4 py-2 hover:bg-white/10 transition-all uppercase tracking-widest">
+                    Cerrar Sesión
+                </button>
+            </div>
+        </div>
+
+        <div id="lista-ot" class="space-y-6">
+            </div>
+    </main>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="text-[9px] text-slate-600 uppercase tracking-[0.5em]">© 2026 Ferro Mecánica • Rosario, Argentina</p>
+    </footer>
 
     <script>
-        // URL de tu nueva Web App (Standalone)
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxJdvYN-q2_p0mkqQnwx2at9AX-qYippQvASmDwluDOs3j3do76eHjA8zztBwPbZBc/exec";
 
         async function consultarHistorial() {
@@ -70,60 +113,69 @@
             const patenteInput = document.getElementById('patente').value.trim();
             const errorMsg = document.getElementById('error-msg');
             const loader = document.getElementById('loader');
-            const authBox = document.getElementById('auth-box');
+            const authContainer = document.getElementById('auth-container');
+            const resultado = document.getElementById('resultado');
 
             if (!emailInput || !patenteInput) {
-                errorMsg.innerText = "Completá email y patente para ingresar.";
-                errorMsg.style.display = "block";
+                errorMsg.innerText = "Por favor, complete ambos campos.";
+                errorMsg.classList.remove('hidden');
                 return;
             }
 
-            errorMsg.style.display = "none";
-            loader.style.display = "block";
-            authBox.style.display = "none";
+            errorMsg.classList.add('hidden');
+            loader.classList.remove('hidden');
+            authContainer.classList.add('hidden');
 
             try {
                 const response = await fetch(`${WEB_APP_URL}?email=${encodeURIComponent(emailInput)}&patente=${encodeURIComponent(patenteInput)}`);
                 const data = await response.json();
 
-                loader.style.display = "none";
+                loader.classList.add('hidden');
 
                 if (data.error) {
                     errorMsg.innerText = data.error;
-                    errorMsg.style.display = "block";
-                    authBox.style.display = "block";
+                    errorMsg.classList.remove('hidden');
+                    authContainer.classList.remove('hidden');
                 } else {
                     document.getElementById('nombre-cliente').innerText = data.cliente;
                     document.getElementById('datos-auto').innerText = data.vehiculo;
                     
                     let htmlHistorial = "";
                     if (data.historial.length === 0) {
-                        htmlHistorial = '<div class="card">No se encontraron órdenes de trabajo cerradas para este vehículo.</div>';
+                        htmlHistorial = '<div class="text-center text-slate-500 py-12 uppercase text-xs tracking-widest">No se registran servicios cerrados.</div>';
                     } else {
                         data.historial.forEach(ot => {
                             htmlHistorial += `
-                                <div class="card">
-                                    <div class="fecha">SERVICIO DEL ${ot.fecha}</div>
-                                    <div style="font-size: 15px; line-height: 1.4;">${ot.detalle}</div>
-                                    <div style="margin-top: 10px; font-size: 13px; color: #555;">
-                                        <b>Kilometraje:</b> ${ot.km} KM<br>
-                                        <b>Próximo Service:</b> ${ot.proximo} KM
+                                <div class="bg-zinc-900/40 rounded-sm border border-white/5 p-8 group hover:border-ferro/30 transition-all shadow-lg">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div class="text-ferro font-black text-xs uppercase tracking-[0.2em]">${ot.fecha}</div>
+                                        <div class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">${ot.km} KM</div>
                                     </div>
-                                    ${ot.pdf ? `<a href="${ot.pdf}" target="_blank" class="btn-pdf">DESCARGAR REPORTE PDF</a>` : ''}
+                                    <div class="text-slate-300 text-sm leading-relaxed mb-6">${ot.detalle}</div>
+                                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-6 border-t border-white/5">
+                                        <div class="text-[10px] text-slate-500 uppercase tracking-widest">
+                                            Próximo Service sugerido: <span class="text-white font-bold">${ot.proximo} KM</span>
+                                        </div>
+                                        ${ot.pdf ? `
+                                            <a href="${ot.pdf}" target="_blank" class="bg-white/5 border border-ferro text-ferro px-6 py-2.5 rounded-sm font-black text-[10px] hover:bg-ferro hover:text-black transition-all uppercase tracking-widest text-center">
+                                                Ver Reporte PDF
+                                            </a>` : ''}
+                                    </div>
                                 </div>
                             `;
                         });
                     }
 
                     document.getElementById('lista-ot').innerHTML = htmlHistorial;
-                    document.getElementById('resultado').style.display = "block";
+                    resultado.classList.remove('hidden');
+                    // Scroll suave hasta los resultados
+                    resultado.scrollIntoView({ behavior: 'smooth' });
                 }
             } catch (err) {
-                loader.style.display = "none";
-                authBox.style.display = "block";
-                errorMsg.innerText = "Error de conexión. Verificá tu internet o intentá más tarde.";
-                errorMsg.style.display = "block";
-                console.error(err);
+                loader.classList.add('hidden');
+                authContainer.classList.remove('hidden');
+                errorMsg.innerText = "Error de conexión. Intente más tarde.";
+                errorMsg.classList.remove('hidden');
             }
         }
     </script>
