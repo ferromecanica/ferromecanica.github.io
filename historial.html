@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Historial - Ferro Mecánica</title>
+    <style>
+        :root { --naranja: #E48A06; --oscuro: #333; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; color: var(--oscuro); margin: 0; padding: 20px; }
+        .login-box { max-width: 400px; margin: 50px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 5px solid var(--naranja); }
+        h2 { color: var(--naranja); text-align: center; margin-top: 0; }
+        label { display: block; margin: 10px 0 5px; font-weight: bold; font-size: 14px; }
+        input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 16px; }
+        button { width: 100%; padding: 12px; background: var(--naranja); border: none; color: white; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 16px; transition: 0.3s; }
+        button:hover { background: #c67705; }
+        #resultado { max-width: 800px; margin: 20px auto; display: none; }
+        .card { background: white; padding: 20px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .fecha { color: var(--naranja); font-weight: bold; font-size: 14px; }
+        .btn-pdf { display: inline-block; margin-top: 10px; padding: 8px 15px; background: #eee; text-decoration: none; color: var(--oscuro); border-radius: 4px; font-size: 13px; font-weight: bold; border: 1px solid #ccc; }
+        .btn-pdf:hover { background: #ddd; }
+        .loading { text-align: center; display: none; color: var(--naranja); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="login-box" id="auth-box">
+        <h2>CONSULTAR HISTORIAL</h2>
+        <p style="text-align: center; font-size: 13px; color: #666;">Ingresá con tus datos para ver los trabajos realizados.</p>
+        
+        <label>Email</label>
+        <input type="email" id="email" placeholder="ejemplo@correo.com">
+        
+        <label>Patente del Vehículo</label>
+        <input type="text" id="patente" placeholder="ABC123">
+        
+        <button onclick="consultarHistorial()">INGRESAR</button>
+        <p id="error-msg" style="color: red; font-size: 13px; text-align: center; margin-top: 15px; display: none;"></p>
+    </div>
+
+    <div class="loading" id="loader">Buscando en nuestros registros...</div>
+
+    <div id="resultado">
+        <div class="card" style="border-left: 5px solid var(--naranja);">
+            <h3 id="nombre-cliente" style="margin: 0;"></h3>
+            <p id="datos-auto" style="margin: 5px 0 0 0; color: #666;"></p>
+        </div>
+        <div id="lista-ot"></div>
+    </div>
+
+    <script>
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyNiY0VbrNVYsWQvuTuNzEH-kZLAAgjdzf_i2ues4TvIsNs72XIjcAQ_hXbK-B_kLnXvw/exec";
+
+        async function consultarHistorial() {
+            const email = document.getElementById('email').value;
+            const patente = document.getElementById('patente').value;
+            const errorMsg = document.getElementById('error-msg');
+            const loader = document.getElementById('loader');
+
+            if (!email || !patente) {
+                errorMsg.innerText = "Por favor, completá ambos campos.";
+                errorMsg.style.display = "block";
+                return;
+            }
+
+            errorMsg.style.display = "none";
+            loader.style.display = "block";
+            document.getElementById('auth-box').style.display = "none";
+
+            try {
+                const response = await fetch(`${WEB_APP_URL}?email=${email}&patente=${patente}`);
+                const data = await response.json();
+
+                loader.style.display = "none";
+
+                if (data.error) {
+                    errorMsg.innerText = data.error;
+                    errorMsg.style.display = "block";
+                    document.getElementById('auth-box').style.display = "block";
+                } else {
+                    document.getElementById('nombre-cliente').innerText = data.cliente;
+                    document.getElementById('datos-auto').innerText = data.vehiculo;
+                    
+                    let htmlHistorial = "";
+                    data.historial.forEach(ot => {
+                        htmlHistorial += `
+                            <div class="card">
+                                <div class="fecha">${ot.fecha} - ${ot.km} KM</div>
+                                <div style="margin-top: 8px;">${ot.detalle}</div>
+                                ${ot.pdf ? `<a href="${ot.pdf}" target="_blank" class="btn-pdf">Ver Reporte Técnico (PDF)</a>` : ''}
+                                <div style="margin-top: 10px; font-size: 12px; color: #888;">Próximo service sugerido: <b>${ot.proximo} KM</b></div>
+                            </div>
+                        `;
+                    });
+
+                    document.getElementById('lista-ot').innerHTML = htmlHistorial;
+                    document.getElementById('resultado').style.display = "block";
+                }
+            } catch (err) {
+                loader.style.display = "none";
+                errorMsg.innerText = "Error al conectar con el servidor. Intentá más tarde.";
+                errorMsg.style.display = "block";
+                document.getElementById('auth-box').style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
