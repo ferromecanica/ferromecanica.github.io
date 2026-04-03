@@ -34,7 +34,6 @@
         }
         input:focus { border-color: var(--ferro-orange) !important; outline: none; }
 
-        /* Estilo técnico para el auto centrado */
         .car-model-header {
             opacity: 0.35;
             filter: grayscale(100%) brightness(1.3);
@@ -94,9 +93,9 @@
 
     <main id="resultado" class="hidden max-w-4xl mx-auto px-4 pb-12 relative z-30 -mt-40">
         
-        <img id="car-img" src="" class="car-model-header absolute z-0 left-1/2 -translate-x-1/2 top-[-150px] w-[85%] md:w-[60%] h-auto" style="display: none;">
+        <img id="car-img" src="" class="car-model-header absolute z-0 left-1/2 -translate-x-1/2 top-[-200px] w-[85%] md:w-[65%] h-auto" style="display: none;">
 
-        <div class="bg-[#242424] backdrop-blur-md rounded-sm border border-white/10 p-8 mb-8 border-l-4 border-l-ferro shadow-2xl relative z-10 mt-20">
+        <div class="bg-[#242424] backdrop-blur-md rounded-sm border border-white/10 p-8 mb-8 border-l-4 border-l-ferro shadow-2xl relative z-10 mt-52">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                     <h3 id="nombre-cliente" class="font-open font-extrabold text-2xl text-white uppercase tracking-tight leading-none"></h3>
@@ -153,7 +152,6 @@
                     document.getElementById('datos-auto').innerText = data.vehiculo;
                     
                     const carImg = document.getElementById('car-img');
-                    // Normalización automática
                     const normalizedName = data.vehiculo.toLowerCase().trim().replace(/\s+/g, '_');
                     
                     if (normalizedName) {
