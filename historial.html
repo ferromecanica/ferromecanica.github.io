@@ -34,12 +34,11 @@
         }
         input:focus { border-color: var(--ferro-orange) !important; outline: none; }
 
-        /* Estilo para el auto adaptativo */
-        .car-responsive {
-            opacity: 0.35;
+        .car-model-header {
+            opacity: 0.4;
             filter: grayscale(100%) brightness(1.2);
             pointer-events: none;
-            transition: all 0.5s ease;
+            transition: opacity 0.5s ease;
         }
     </style>
 </head>
@@ -56,7 +55,7 @@
         </div>
     </nav>
 
-    <section class="relative min-h-[55vh] flex items-center justify-center overflow-hidden">
+    <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 hero-overlay z-10"></div>
             <img src="foto_historial.png" alt="Historial Ferro" class="w-full h-full object-cover">
@@ -92,14 +91,13 @@
         </div>
     </section>
 
-    <main id="resultado" class="hidden max-w-4xl mx-auto px-4 pb-12 relative z-30 -mt-40">
+    <main id="resultado" class="hidden max-w-4xl mx-auto px-4 pb-12 relative z-30 -mt-32">
         
-        <img id="car-img" src="" 
-             class="car-responsive absolute z-0 left-1/2 -translate-x-1/2 -top-24 w-[80%] 
-                    md:fixed md:left-10 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:w-[30%] md:max-w-md md:z-10" 
-             style="display: none;">
+        <div class="md:hidden flex justify-center -mb-16 relative z-0">
+             <img id="car-img" src="" class="car-model-header w-[90%] h-auto" style="display: none;">
+        </div>
 
-        <div class="bg-[#242424] backdrop-blur-md rounded-sm border border-white/10 p-8 mb-8 border-l-4 border-l-ferro shadow-2xl relative z-20 mt-20 md:mt-0">
+        <div class="bg-[#242424] backdrop-blur-md rounded-sm border border-white/10 p-8 pt-20 md:pt-8 mb-8 border-l-4 border-l-ferro shadow-2xl relative z-10 md:mt-10">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                     <h3 id="nombre-cliente" class="font-open font-extrabold text-2xl text-white uppercase tracking-tight leading-none"></h3>
@@ -156,7 +154,6 @@
                     document.getElementById('nombre-cliente').innerText = data.cliente;
                     document.getElementById('datos-auto').innerText = data.vehiculo;
                     
-                    // CARGA DE IMAGEN
                     const carImg = document.getElementById('car-img');
                     if (data.vehiculo) {
                         const normalizedName = data.vehiculo.toLowerCase().trim().replace(/\s+/g, '_');
