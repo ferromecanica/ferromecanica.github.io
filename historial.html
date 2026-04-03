@@ -35,7 +35,7 @@
         }
         input:focus { border-color: var(--ferro-orange) !important; outline: none; }
 
-        /* Estilo para el modelo 3D con transparencia */
+        /* Estilo técnico para el auto */
         .car-model-overlay {
             opacity: 0.25;
             filter: grayscale(100%) brightness(1.3);
@@ -121,19 +121,6 @@
     <script>
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxJdvYN-q2_p0mkqQnwx2at9AX-qYippQvASmDwluDOs3j3do76eHjA8zztBwPbZBc/exec";
 
-        // Diccionario de mapeo de modelos
-        const carMapping = {
-            "Peugeot 206": "peugeot_206.jpg",
-            "Chevrolet Agile": "chevrolet_agile.jpg",
-            "Renault Clio": "renault_clio.jpg",
-            "Fiat Cronos": "fiat_cronos.jpg",
-            "Chevrolet Cruze": "chevrolet_cruze.jpg",
-            "Nissan Tiida": "nissan_tiida.jpg",
-            "Nissan Versa": "nissan_versa.jpg",
-            "Renault Sandero Stepway": "renault_sandero_stepway.jpg",
-            "Volkswagen Voyage": "volkswage_voyage.jpg"
-        };
-
         async function consultarHistorial() {
             const emailInput = document.getElementById('email').value.trim();
             const patenteInput = document.getElementById('patente').value.trim();
@@ -166,14 +153,16 @@
                     document.getElementById('nombre-cliente').innerText = data.cliente;
                     document.getElementById('datos-auto').innerText = data.vehiculo;
                     
-                    // Lógica de imagen del auto
+                    // LÓGICA DE BÚSQUEDA AUTOMÁTICA DE IMAGEN
                     const carImg = document.getElementById('car-img');
-                    const fileName = carMapping[data.vehiculo];
                     
-                    if (fileName) {
-                        carImg.src = `assets/${fileName}`;
+                    // Normalizamos el nombre: "Nissan Tiida" -> "nissan_tiida"
+                    const normalizedName = data.vehiculo.toLowerCase().trim().replace(/\s+/g, '_');
+                    
+                    if (normalizedName) {
+                        carImg.src = `assets/${normalizedName}.jpg`;
                         carImg.onload = () => carImg.style.display = 'block';
-                        carImg.onerror = () => carImg.style.display = 'none';
+                        carImg.onerror = () => carImg.style.display = 'none'; // Si no encuentra el archivo, se oculta solo
                     } else {
                         carImg.style.display = 'none';
                     }
